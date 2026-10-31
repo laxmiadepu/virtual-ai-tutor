@@ -1,0 +1,45 @@
+VIRTUAL AI TUTOR PRO - GOOGLE AI STUDIO GEMINI PATCH
+
+This is ONLY a small set of replacement files for your uploaded
+virtual-ai-tutor-pro-reviewed.rar project. It is not the entire application.
+Keep the old project and any saved progress untouched until tests pass.
+
+1. Extract the .rar project to a NEW directory. Make a second backup copy.
+   Use the project root that contains package.json and src/.
+2. Extract this patch zip. Copy src/ and .gitignore from the patch into the
+   project root, allowing those 4 existing files to be replaced:
+   src/lib/ai.server.ts, src/lib/ai.functions.ts,
+   src/routes/api/chat.ts, .gitignore
+   (You may copy .env.example as a template too.)
+3. Open the PROJECT root in VS Code. Install Bun if needed from https://bun.sh/.
+4. In the VS Code terminal run:
+     bun install
+     bun add @google/genai
+5. In Google AI Studio https://aistudio.google.com/api-keys create your API key.
+   Do not give the key to anyone or paste it into any public chat or GitHub.
+6. In the project ROOT (same folder as package.json), create a file named .env
+   containing:
+     GEMINI_API_KEY=YOUR_ACTUAL_KEY
+     GEMINI_MODEL=gemini-3.5-flash-lite
+   No quote marks are required. Save it and restart the dev server.
+7. Run: bun run dev
+8. Open the localhost URL shown in the terminal and try:
+   Tutor: What is a pointer in C? Then: Give a short code example.
+   Quiz: Python loops, 5 easy questions.
+   Roadmap: Java Programming, Beginner, then Start practice.
+9. If the model is not available to your account, select another model
+   supported by your AI Studio account (for example gemini-3.8-flash)
+   by changing GEMINI_MODEL in .env, and restart.
+
+CAUTIONS:
+- This patch switches AI generation from local Ollama/Lovable to Gemini;
+  it does not change UI, app routes, saved progress or the code compiler.
+- Do not set VITE_GEMINI_API_KEY or put your key in src/components or GitHub.
+- API calls need an internet connection and project quota. Google's free
+  tier and availability vary. Paid billing may charge for usage.
+- AI Studio creates/tests API keys; it does not deploy your app. For cloud
+  hosting configure GEMINI_API_KEY in the host's SERVER-side Secrets/Env.
+- Before making your app public, add authentication and a durable server-side
+  rate limit to prevent strangers from exhausting API quota.
+- This patch was reviewed structurally but cannot be live tested without
+  YOUR Google API key and your running app. Do not share that key.

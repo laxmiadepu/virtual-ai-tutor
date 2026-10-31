@@ -1,0 +1,13 @@
+VIRTUAL AI TUTOR PRO — QUICK START (WINDOWS)
+
+1. Extract this ZIP into a NEW folder. Do not replace your older working project.
+2. Open the extracted folder in VS Code.
+3. In the terminal, run: bun install
+4. Confirm Ollama is running: ollama list
+   The model should be llama3.2:1b. If missing, pull it: ollama pull llama3.2:1b
+5. In VS Code run: bun run dev
+6. Open the Local URL shown by Vite, usually http://localhost:8080/
+7. Test AI Tutor and Roadmap. If AI-generated roadmap fails, click "Use sample Python roadmap (offline)".
+8. To mark a topic completed, solve the program then click "Check my solution"; Run Code alone does not mark completion.
+
+Read LOCAL-SETUP.md and HACKATHON-CHECKLIST.md for caveats and test steps.
